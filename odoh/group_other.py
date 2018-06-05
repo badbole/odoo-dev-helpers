@@ -14,6 +14,16 @@ odoo =  [
      "odoo-account-extra",
      "odoo-calendar",
      "odoo-stock",
+     "odoo-edi",
+     "odoo-payroll",
+     "odoo-imagemagick",
+     "odoo-hr",
+     "odoo-hr_employercert",
+     "odoo-base",
+     "odoo-theme-vertel",
+     "odoo-report",
+     "odoo-product",
+     "odoo-l10n_se_payroll",
 
     ]},
 {"comment": "Hibou Corp.",
@@ -22,5 +32,12 @@ odoo =  [
      "hibou-odoo-suite",
      "odoo-hr-payroll",
     ]},
+{"comment": "Open Sur",
+ "link": "git@github.com:OpenSur/",
+ "repos": [
+     "Odoo_addons",
+
+    ]},
 
 ]
+

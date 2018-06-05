@@ -5,8 +5,9 @@
 
 import os
 import subprocess
-import datetime
+# import datetime
 import ast
+import argparse
 
 
 class ConfigHandler(object):
@@ -54,7 +55,9 @@ class ConfigHandler(object):
 
 
 class RepoHandler(ConfigHandler):
-
+    """
+    Handler for repositories configured
+    """
 
     def _get_name_from_link(self, link):
         if 'http' in link:
@@ -164,6 +167,7 @@ class RepoHandler(ConfigHandler):
         for repo in vendor_repos:
             if self._check_skip(repo, vals['default_vendor']):
                 continue
+
             # if 'decodio' in vals['vendor']['link']:
             #     # catch only
             #     pass
@@ -176,11 +180,13 @@ class RepoHandler(ConfigHandler):
                 cr = False
                 print E
             if cr:
+
                 folder_repo = cr.get('_folder_') and cr['_folder_'] or False
                 if folder_repo:
                     my_path.append(folder_repo)
                 else:
                     my_path.append(repo)
+
                 rep_vals = self._get_defaults(cr)
             else:
                 my_path.append(repo)
@@ -205,16 +211,28 @@ class RepoHandler(ConfigHandler):
                 self._actions.append((my_val))
             elif self.action == 'symlink':
                 check_folder = '/'.join([self.config['root']] + my_path)
+                folder_repos = []
+
                 if os.path.exists(check_folder):
-                    folder_repos = [r for r in os.listdir(check_folder)
-                                     if os.path.isdir(os.path.join(check_folder, r)) \
-                                       and r not in ['.idea', '.git', 'setup'] ]
-                                     # TODO: add eclipse config folder?
-                    self._actions.append([check_folder, folder_repos])
+                    folder_repos = [
+                        r for r in os.listdir(check_folder)
+                        if os.path.isdir(os.path.join(check_folder, r)) \
+                        and r not in ['.idea', '.git', 'setup']
+                    ]  # TODO: add eclipse config folder?
                 else:
                     pass
+
+
+                do_repos = []
+                for r in folder_repos:
+                    if cr and self._check_skip(r, cr):
+                        continue
+                    do_repos.append(r)
+                if do_repos:
+                    self._actions.append([check_folder, do_repos])
+
             elif self.action == 'pull':
-                repo = '/'.join(([self.config['root']] + my_path ))
+                repo = '/'.join(([self.config['root']] + my_path))
                 self._actions.append(repo)
 
 
@@ -227,7 +245,6 @@ class Manager(RepoHandler):
 
     config files: group_*
        -
-
 
     """
 
@@ -264,23 +281,19 @@ class Manager(RepoHandler):
             repo = ''.join((action['link'], action['path'][-1], '.git'))
             git.append(repo)
             if action.get('branch'):
-                git.append('--branch=%s' % action['branch'])
+                if 'master' != action['branch']:
+                    git.append('--branch=%s' % action['branch'])
             if action.get('depth'):
                 git.append('--depth=%s' % action['depth'])
             repo_path = root
             for path in action['my_path'][:-1]:
                 repo_path = self.check_create_folder('/'.join((repo_path, path)))
-            git_path = '/'.join((repo_path,action['my_path'][-1]))
+            git_path = '/'.join((repo_path, action['my_path'][-1]))
             if os.path.exists(git_path) and \
-                os.path.exists(git_path +'/.git'):
+                os.path.exists(git_path + '/.git'):
                 print "Repo %s aldready present" % repo
                 continue
             git.append(git_path)
-            # check1 = subprocess.Popen(['git', 'config', '--local', '--get', 'user.name'], stderr=subprocess.PIPE)
-            # check2 = subprocess.Popen(['git', 'config', '--global', '--get', 'user.name'], stderr=subprocess.PIPE)
-            # check3 = subprocess.Popen(['git', 'config', '--system', '--get', 'user.name'], stderr=subprocess.PIPE)
-            # run = subprocess.Popen(git, stderr=subprocess.PIPE)
-            # out, err = run.communicate()
             ok, err = self._run_shell(git)
             if not ok:
                 if "could not read Username for 'https://github.com'" in err:
@@ -347,17 +360,22 @@ class Manager(RepoHandler):
         done = {'created': {}, 'modified': {}, 'ok': {}}
         for path, files, folders in os.walk(dest_symlink):
             for file in files:
-                fpath = '/'.join((path,file))
+                fpath = '/'.join((path, file))
                 if os.path.islink(fpath):
                     existing[fpath] = os.readlink(fpath)
+        full_existing = dict(existing)
         for path, module in installable:
             src = '/'.join((path, module))
             dst = '/'.join((dest_symlink, module))
             dst_exist = existing.get(dst, False)
             if not dst_exist:
-                os.symlink(src, dst)
-                done['created'][dst] = src
-                continue
+                if not full_existing.get(dst, False):
+                    os.symlink(src, dst)
+                    done['created'][dst] = src
+                    full_existing[dst] = src
+                    continue
+                else:
+                    pass
             if dst_exist == dst:
                 done['ok'][dst] = src
             else:
@@ -380,19 +398,19 @@ class Manager(RepoHandler):
         print done
 
 
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(
+        prog="odoh", description='Odoo helper functions',
+        epilog="""
+            For more info call help on each option :
+            odoh symlink -h
+            """)
+    parser.add_argument('action', help='Repo action')
+    #parser.add_argument('-a', '--action', nargs='+', help='Repos actions')
+    parser.add_argument('-c', '--config', help=' optional custom config to run')
 
+    parser.add_argument('-r', '--repos', nargs='+', help='Repos config for run')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    args = vars(parser.parse_args())
+    manager = Manager(args)
+    # manager.process()

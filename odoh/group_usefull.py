@@ -65,7 +65,7 @@ odoo = [
  "repos": ["julius-openobject-addons"]
 },
 
-{"comment":"efficient multicompany",
+{"comment": "efficient multicompany",
  "link": "git@github.com:Eficent/",
  "repos": [
     "multicompany-fixes",
@@ -84,18 +84,7 @@ odoo = [
  "link": "git@github.com:asphaltzipper/",
  "repos": ["azi-odoo-modules"
     ]},
-{"comment": "Vertel AB",
- "link": "git@github.com:vertelab/",
- "repos": [
-     "odoo-gdpr",
-     "odoo-website-dermanord",
-     "odoo-website",
-     "odoo-website-sale",
-     "odoo-account-extra",
-     "odoo-calendar",
-     "odoo-stock",
 
-    ]},
 
 ]
 
