@@ -48,18 +48,18 @@ odoo = [
     "odoo-eam",
     "odoo-tools",
     "odoo-crane"
-    ]},
-
+    ]
+ },
 {"comment": "Braintec modules",
  "link": "git@github.com:brain-tec/",
  "repos": [
      "server-tools",
-     "odoo-usability",
-     "manufacture",
+     "odoo-usability",     # fork akretion/odoo_usability
+     #"manufacture",       # form OCA
      "odoo-extra-addons",
      "tkobr-addons",
      "addons-onestein",
-     "bank-statement-reconcile",
+     #"bank-statement-reconcile", # form OCA
     ]},
 {"comment": "Julius network",
  "link": "git@github.com:julius-network-solutions/",
@@ -79,12 +79,16 @@ odoo = [
     ]},
 {"comment": "Pledra addons",
  "link": "git@github.com:pledra/",
- "repos": ["odoo-product-configurator"
-    ]},
+ "repos": [
+     "odoo-product-configurator"
+    ]
+ },
 {"comment": "Asphalt zipper addons",
  "link": "git@github.com:asphaltzipper/",
- "repos": ["azi-odoo-modules"
-    ]},
+ "repos": [
+     "azi-odoo-modules"
+    ]
+ },
 
 
 ]

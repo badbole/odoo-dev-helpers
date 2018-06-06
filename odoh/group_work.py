@@ -100,7 +100,10 @@ odoo = [
 {"comment": "Cybro addons",
  #"folder": "cybro",
  "link": "git@github.com:CybroOdoo/",
- "repos": ["CybroAddons"]},
+ "repos": [
+     "CybroAddons"
+     ]
+ },
 {"comment": "Odoo PLM modules set: https://sourceforge.net/projects/openerpplm/",
  "link": "https://git.code.sf.net/p/openerpplm/",
  "repos": [
@@ -117,6 +120,7 @@ odoo = [
      "pos-addons",
      "mail-addons",
      "partner",
-     "website"]
+     #"website",    fork from OCA
+ ]
 },
 ]

@@ -8,6 +8,7 @@ import subprocess
 # import datetime
 import ast
 import argparse
+import json
 
 
 class ConfigHandler(object):
@@ -379,7 +380,7 @@ class Manager(RepoHandler):
                     continue
                 else:
                     pass
-            if dst_exist == src:
+            elif dst_exist == src:
                 done['ok'][dst] = src
             else:
                 os.remove(dst)
@@ -401,6 +402,7 @@ class Manager(RepoHandler):
             print "created : ", len(done['created'])
         if done['modified']:
             print "modified : ", len(done['modified'])
+            print json.dumps(done['modified'], indent=4)
         if done['ok']:
             print "ok : ", len(done['ok'])
         if clean and to_remove:
