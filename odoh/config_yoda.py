@@ -1,6 +1,5 @@
-"""
-Only symlink based on config_brundo_10 clone/pull config
-"""
+
+branch = '10.0'
 root = "/media/data/code/ODOO_10"
 sym_dest = "/media/data/code/ODOO_10/symlink"
 symlink = {
@@ -8,27 +7,23 @@ symlink = {
     "_clean_": True, #default False, clean symlink dir from extras not listed
 
     "_only_": [
-        "uvid",
-        "dajmi5",
-        "OCA"
+        'OCA',
+        'dajmi5'
     ],
     "dajmi5": {
         "_only_": [
             "odoo-comunity-themes",
-            "odoo-test-data",
-
+            "d5_scenario",
         ],
         "odoo-comunity-themes": {
             "_only_": ["backend_theme_v10"]
         }
     },
-
     "OCA": {
         "_only_": [
             'server-tools',
-            'partner-contact',
             'web'
-        ],
+            ],
         "server-tools": {
             "_only_": [
                 "base_export_manager",
@@ -40,12 +35,8 @@ symlink = {
                 "auditlog",
                 "auth_admin_passkey",
                 "auth_brute_force",
+                "auth_session_timeout",
             ]
-            },
-        "partner-contact": {
-            "_only_": [
-                "base_location",
-                ]
             },
         "web": {
             "_only_": [
@@ -59,3 +50,5 @@ symlink = {
         }
     },
 }
+
+

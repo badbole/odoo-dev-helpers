@@ -1,18 +1,4 @@
-"""
-Prototype odoo helper config
-"""
-
-
-"""
-default branch for this config
-"""
 branch = '10.0'
-
-
-"""
-default location for vendor repos, if not existing, 
-current script working directory will be used
-"""
 root = "/media/data/code/ODOO_10"
 
 clone = {
@@ -25,6 +11,7 @@ clone = {
         # my private working branch, modify per user
         'payroll_oe10': {"_branch_": "10.0-bole"}
     },
+
 
     "OCA": {
         "_skip_": ["department", "program", # old versions
@@ -45,10 +32,6 @@ clone = {
     }
 }
 
-
-"""
-Main folder containing per config folders with addons symlinks
-"""
 sym_dest = "/media/data/code/ODOO_10/symlink"
 symlink = {
     "_info_": 2,
@@ -56,14 +39,39 @@ symlink = {
 
     "_skip_": ["Odoo"],
     #"_only_": ['OCA', 'dajmi5'],
+    "dajmi5": {
+        "_skip_": [
+            "d5_odoo_data",
+            "d5_odoo_demo",
+        ],
+        "l10n_croatia": {
+            "_skip_": [
+                "l10n_hr_joppd", # uvid repo
+                "l10n_hr_bank",  # oca repo
+                "l10n_hr_base_location",
+            ]
+        }
+    },
+    "decodio": {
+        "_skip_": [
+            "l10n_hr",
+            "comunity10"
+        ],
+
+    },
     "OCA": {
         "_skip_": ['geospatial', 'l10n_italy'],
         "account-financial-tools": {
-            '_skip_': ['currency_rate_update']
-            },
+            '_skip_': [
+                'currency_rate_update'
+            ]
+        },
         "pos": {
-            "_skip_": ["pos_config", "pos_pricelist"]
-            },
+            "_skip_": [
+                "pos_config",
+                "pos_pricelist"
+            ]
+        },
     },
 }
 

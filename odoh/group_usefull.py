@@ -16,6 +16,7 @@ odoo = [
   "repos": [
         "addons-vauxoo",
         "odoo-users",
+        #"web", fork OCA/web
     ]},
 {"comment": "Ascone addons - External document management - Alfresco",
  #"folder": "ascone",

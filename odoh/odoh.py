@@ -370,13 +370,16 @@ class Manager(RepoHandler):
             dst_exist = existing.get(dst, False)
             if not dst_exist:
                 if not full_existing.get(dst, False):
-                    os.symlink(src, dst)
-                    done['created'][dst] = src
-                    full_existing[dst] = src
+                    try:
+                        os.symlink(src, dst)
+                        done['created'][dst] = src
+                        full_existing[dst] = src
+                    except Exception as E:
+                        pass
                     continue
                 else:
                     pass
-            if dst_exist == dst:
+            if dst_exist == src:
                 done['ok'][dst] = src
             else:
                 os.remove(dst)
@@ -394,8 +397,14 @@ class Manager(RepoHandler):
                     to_remove.append(link)
             for r in to_remove:
                 os.remove(r)
-
-        print done
+        if done['created']:
+            print "created : ", len(done['created'])
+        if done['modified']:
+            print "modified : ", len(done['modified'])
+        if done['ok']:
+            print "ok : ", len(done['ok'])
+        if clean and to_remove:
+            print "removed : ", len(to_remove)
 
 
 if __name__ == '__main__':

@@ -20,6 +20,8 @@ odoo =  [
          "odoo-comunity-themes",
          "odoo-test-data",
          #"odoo_balkan",
+         "l10n-kosovo",
+         "l10n-montenegro",
     ]},
 {"comment": "UVID Private repos!!!",
      "folder": "uvid",
