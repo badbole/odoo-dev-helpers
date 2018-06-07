@@ -30,7 +30,15 @@ clone = {
         "odoo-hr_employercert": {"_branch_": 'master'},
     },
     "decodio": {
-        "l10n_hr": {"_branch_": "8.3-dev"} # examples1
+        "l10n_hr": {"_branch_": "8.3-dev"},       # examples but for v8
+        "community10": {"_branch_": "10.0-dev"},  # collenction of comunity modules from others
+    },
+    "odoomrp": {
+        "odoomrp-wip": {"_branch_": "9.0"},        # for v9
+        "odoomrp-utils": {"_branch_": "9.0"}      # for v9
+    },
+    "asphaltzipper": {
+        "azi-odoo-modules": {"_branch_": "master"}
     }
 }
 
@@ -40,7 +48,12 @@ symlink = {
     "_clean_": True,    # default False, clean symlink dir from extras not listed
 
     "_skip_": [
-        "Odoo"                         # only special case link!
+        "Odoo",                         # only special case link!
+        "odoomrp",                      # v9.0 modules, TODO port interesting to v10!
+        "julius-network-solutions",     # old api.. no like.. leave for examples
+        "Smile-SA",                     # interesting concept modules, carefull!!
+                                        # - lots of auto_install enabled modules,
+                                        # requires update -all as start parameter!
     ],
 
     "dajmi5": {
@@ -55,11 +68,11 @@ symlink = {
                 "l10n_hr_base_location", # take from oca repo
             ]
         },
-        "d5_company_kontal": {
-            "_skip_": [
-                "object_merger",         # use Julius version, TODO remove from repo!
-            ]
-        }
+        # "d5_company_kontal": {
+        #     "_skip_": [
+        #         "object_merger",         # use Julius version, TODO remove from repo!
+        #     ]
+        # }
     },
     "decodio": {
         "_skip_": [
@@ -71,7 +84,7 @@ symlink = {
     "OCA": {
         "_skip_": [
             'geospatial',     # need postgis addon on postgres,
-            'l10n_italy',     # PyXb - NOPE!!! not wantd!
+            'l10n-italy',     # PyXb - NOPE!!! not wantd!
             "vertical-hotel", # take from Serpent, original author!
         ],
         "account-financial-tools": {
@@ -88,7 +101,10 @@ symlink = {
         "currency": {   # for v11, only examples and ideas!
             "_skip_": [
                 "currency_rate_update", # not for 10.0
-            ]
+            ],
+        },
+        "l10n-croatia": {
+            "_folder_": "oca-l10n-croatia"
         }
     },
     "brain-tec": {
@@ -96,18 +112,34 @@ symlink = {
             "odoo-usability", # forked from Akretion
             "server-tools",   # frk from OCA/server-tools
         ],
+    },
+    "vertelab": {
+        "_skip_": [
+            "odoo-edi",   #  no need for now, extra lib : openpyxl
+            "odoo-theme-vertel",   # wierd import error! TODO: . check
+            "odoo-website",    # lookl like wrong vesion?
+        ]
+    },
+    # "julius-network-solutions": {
+    #     "julius-openobject-addons": {
+    #         "_skip_": [
+    #             "account_followup_choose_partners_2", # some problems starting odoo
+    #             "product_tags",                       # yelizarev has better version!
+    #             "product_manufacturer",               # use OCA version!
+    #         ]
+    #     }
+    # },
 
 
-    },
-    "julius-network-solutions": {
-        "julius-openobject-addons": {
-            "_skip_": [
-                "account_followup_choose_partners_2", # some problems starting odoo
-                "product_tags",                       # yelizarev has better version!
-                "product_manufacturer",               # use OCA version!
-            ]
-        }
-    },
+    # "Smile-SA": {
+    #     "odoo_addons": {
+    #         "_skip_": [
+    #             "smile_perf_analyzer",
+    #             "smile_audit",
+    #             "smile_data_integration",
+    #         ]
+    #     }
+    # },
     "serpent": {
         "SerpentCS_Contributions": {
             "_skip_": [
@@ -150,6 +182,20 @@ symlink = {
         "addons-vauxoo": {
             "_skip_": [
                 "partner_credit_limit",   #use Yelizarev version
+            ]
+        }
+    },
+    "asphaltzipper": {
+        "azi-odoo-modules": {
+            "_skip_": [
+                "customer_outstanding_statement",  # use OCA version
+                "web_notify",
+                "account_payment_batch_process",
+                "stock_inventory_revaluation",
+                "web_search_with_and",
+                "partner_daytopay",
+                "web_m2x_options",
+                "web_sheet_full_width",
             ]
         }
     }
