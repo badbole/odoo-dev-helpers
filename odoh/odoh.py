@@ -89,7 +89,8 @@ class RepoHandler(ConfigHandler):
         super(RepoHandler, self).__init__(args.get('config'))
         structure = []
         file_path = os.path.realpath(__file__)
-        work_path = file_path.split('/')[:-1].join('/')
+        work_path = file_path.split('/')[:-1]
+        work_path = '/'.join(work_path)
         for file in os.listdir(work_path):
             file_list = []
 
