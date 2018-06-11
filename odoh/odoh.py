@@ -88,8 +88,9 @@ class RepoHandler(ConfigHandler):
 
         super(RepoHandler, self).__init__(args.get('config'))
         structure = []
-
-        for file in os.listdir(os.path.realpath(__file__)):
+        file_path = os.path.realpath(__file__)
+        work_path = file_path.split('/')[:-1].join('/')
+        for file in os.listdir(work_path):
             file_list = []
 
             if file.startswith('group'):
