@@ -17,6 +17,7 @@ odoo = [
      "survey",
      "social",
      "edi",
+     "data-protection",
      "connector",
      "stock-logistics-reporting",
      "stock-logistics-warehouse",

@@ -48,7 +48,7 @@ symlink = {
     "_clean_": True,    # default False, clean symlink dir from extras not listed
 
     "_skip_": [
-        "Odoo",                         # only special case link!
+        "odoo",                         # only special case link!
         "odoomrp",                      # v9.0 modules, TODO port interesting to v10!
         "julius-network-solutions",     # old api.. no like.. leave for examples
         "Smile-SA",                     # interesting concept modules, carefull!!
@@ -202,5 +202,10 @@ symlink = {
 }
 
 pull = {
-  '_skip_': ['Odoo']
+    '_skip_': ['Odoo'],
+    "OCA": {
+        "l10n-croatia": {
+            "_folder_": "oca-l10n-croatia"
+        }
+    }
 }

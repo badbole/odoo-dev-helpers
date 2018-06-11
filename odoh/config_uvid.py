@@ -31,7 +31,6 @@ symlink = {
         ],
         "server-tools": {
             "_only_": [
-                "base_export_manager",
                 "base_export_security",
                 "base_suspend_security",
                 "base_technical_features",
