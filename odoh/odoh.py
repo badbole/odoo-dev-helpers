@@ -9,6 +9,9 @@ import subprocess
 import ast
 import argparse
 import json
+import logging
+_logger = logging.getLogger("ODOH")
+channel = logging.StreamHandler()
 
 
 class ConfigHandler(object):
@@ -86,7 +89,7 @@ class RepoHandler(ConfigHandler):
         super(RepoHandler, self).__init__(args.get('config'))
         structure = []
 
-        for file in os.listdir(os.getcwd()):
+        for file in os.listdir(os.path.realpath(__file__)):
             file_list = []
 
             if file.startswith('group'):
