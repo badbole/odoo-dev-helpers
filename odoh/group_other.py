@@ -38,6 +38,18 @@ odoo =  [
      "Odoo_addons",
 
     ]},
-
+{"comment": "AbAKUS it-solutions",
+ "link": "git@github.com:abakus-it/",
+ "repos": [
+     "hr",
+     "base",
+     "website_sale",
+     "stock",
+     "purchase",
+     "sale",
+     "calendar",
+     "vertical-publisher",
+     "project",
+ ]},
 ]
 #https://github.com/avanzosc

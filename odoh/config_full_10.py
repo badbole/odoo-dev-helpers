@@ -20,7 +20,8 @@ clone = {
                    "server-ux"],
         "currency": {"_branch_": '11.0'}, # examples
         "l10-romaina": {"_branch_": '11.0'}, # examples
-        "l10n-croatia": {"_folder_": "oca-l10n-croatia"}
+        "l10n-croatia": {"_folder_": "oca-l10n-croatia"},
+        "oca-decorators": {"_branch_": "master"}, # look like for v8-v10 main decorators
     },
     "vertelab": {
         "odoo-edi": {"_branch_": 'master'},
@@ -54,6 +55,7 @@ symlink = {
         "Smile-SA",                     # interesting concept modules, carefull!!
                                         # - lots of auto_install enabled modules,
                                         # requires update -all as start parameter!
+
     ],
 
     "dajmi5": {
@@ -86,6 +88,7 @@ symlink = {
             'geospatial',     # need postgis addon on postgres,
             'l10n-italy',     # PyXb - NOPE!!! not wantd!
             "vertical-hotel", # take from Serpent, original author!
+            "l10n-slovenia",  # for v8
         ],
         "account-financial-tools": {
             "_skip_": [

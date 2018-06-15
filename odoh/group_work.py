@@ -18,6 +18,7 @@ odoo = [
      "social",
      "edi",
      "data-protection",
+     "oca-decorators",
      "connector",
      "stock-logistics-reporting",
      "stock-logistics-warehouse",

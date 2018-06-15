@@ -10,7 +10,8 @@ symlink = {
     "_only_": [
         "uvid",
         "dajmi5",
-        "OCA"
+        "OCA",
+        "it-projects-llc",
     ],
     "dajmi5": {
         "_only_": [
@@ -57,4 +58,11 @@ symlink = {
             ]
         }
     },
+
+    "it-projects-llc": {
+        "_only_": ["misc-addons"],
+        "misc-addons": {
+            "_only_": ["hr_rule_input_compute"]
+        }
+    }
 }
