@@ -205,6 +205,14 @@ symlink = {
                 "web_sheet_full_width",
             ]
         }
+    },
+    "ecino": {
+        "compassion-modules":{
+            "_skip_": [
+                "message_center_compassion"
+                "child_compassion",  #glupi dependency koji ne radi : jwt
+            ]
+        }
     }
 }
 
