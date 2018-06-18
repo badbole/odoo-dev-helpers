@@ -113,9 +113,9 @@ symlink = {
                 "currency_rate_update", # not for 10.0
             ],
         },
-        "l10n-croatia": {
-            "_folder_": "oca-l10n-croatia"
-        }
+        "l10n-croatia": {"_folder_": "oca-l10n-croatia"},
+        "oca-decorators": {"_branch_": "master"}, # look like for v8-v10 main decorators
+
     },
     "brain-tec": {
         "_skip_": [
