@@ -60,7 +60,7 @@ symlink = {
                                         # - lots of auto_install enabled modules,
                                         # requires update -all as start parameter!
         "ecino",
-        "jarsa",
+        "Jarsa",
     ],
 
     "dajmi5": {
