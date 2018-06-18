@@ -59,7 +59,8 @@ symlink = {
         "Smile-SA",                     # interesting concept modules, carefull!!
                                         # - lots of auto_install enabled modules,
                                         # requires update -all as start parameter!
-
+        "ecino",
+        "Jarsa",
     ],
 
     "dajmi5": {
@@ -209,21 +210,21 @@ symlink = {
             ]
         }
     },
-    "ecino": {
-        "compassion-modules": {
-            "_skip_": [
-                "message_center_compassion"
-                "child_compassion",  #glupi dependency koji ne radi : jwt
-            ]
-        }
-    }
+    # "ecino": {
+    #     "compassion-modules": {
+    #         "_skip_": [
+    #             "message_center_compassion"
+    #             "child_compassion",  #glupi dependency koji ne radi : jwt
+    #         ]
+    #     }
+    # }
 }
 
 pull = {
     '_skip_': ['Odoo'],
-    "OCA": {
-        "l10n-croatia": {
-            "_folder_": "oca-l10n-croatia"
-        }
-    }
+    # "OCA": {
+    #     "l10n-croatia": {
+    #         "_folder_": "oca-l10n-croatia"
+    #     }
+    # }
 }

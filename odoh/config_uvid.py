@@ -15,7 +15,8 @@ symlink = {
         "it-projects-llc",
         "akretion",
         "ecino",
-        "abakus-it"
+        "abakus-it",
+        "serpent",
     ],
     "dajmi5": {
         "_only_": [
@@ -129,5 +130,14 @@ symlink = {
         "misc-addons": {
             "_only_": ["hr_rule_input_compute"]
         }
-    }
+    },
+    "serpent": {
+        "_only_": ["SerpentCS_Contributions"],
+        "SerpentCS_Contributions": {
+            "_only_": [
+                "hr_applicant",
+                "hr_grade_rank",
+            ]
+        }
+    },
 }
