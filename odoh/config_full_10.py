@@ -60,6 +60,7 @@ symlink = {
                                         # - lots of auto_install enabled modules,
                                         # requires update -all as start parameter!
         "ecino",
+        "jarsa",
     ],
 
     "dajmi5": {
@@ -221,9 +222,9 @@ symlink = {
 
 pull = {
     '_skip_': ['Odoo'],
-    "OCA": {
-        "l10n-croatia": {
-            "_folder_": "oca-l10n-croatia"
-        }
-    }
+    # "OCA": {
+    #     "l10n-croatia": {
+    #         "_folder_": "oca-l10n-croatia"
+    #     }
+    # }
 }
