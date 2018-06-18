@@ -40,7 +40,11 @@ clone = {
     },
     "asphaltzipper": {
         "azi-odoo-modules": {"_branch_": "master"}
+    },
+    "ecino": {
+        "compassion-modules": {"_branch_": "10.0-emanuel"}
     }
+
 }
 
 sym_dest = "/media/data/code/ODOO_10/symlink"

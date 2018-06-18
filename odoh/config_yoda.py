@@ -22,7 +22,8 @@ symlink = {
     "OCA": {
         "_only_": [
             'server-tools',
-            'web'
+            'web',
+            "knowledge",
             ],
         "server-tools": {
             "_only_": [

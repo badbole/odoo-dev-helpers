@@ -51,5 +51,13 @@ odoo =  [
      "vertical-publisher",
      "project",
  ]},
+    {"comment": "Jarsa Sistemas, S.A. de C.V., Odoo Gold Partner in Mexico",
+     "link": "git@github.com:Jarsa/",
+     "repos": [
+         "transport-management-system",
+         "vehicle-maintenance-system",
+         "account-fix-tools",
+
+     ]}
 ]
 #https://github.com/avanzosc
