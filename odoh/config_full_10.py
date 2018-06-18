@@ -92,6 +92,9 @@ symlink = {
             'geospatial',     # need postgis addon on postgres,
             'l10n-italy',     # PyXb - NOPE!!! not wantd!
             "vertical-hotel", # take from Serpent, original author!
+            "currency",       # 11
+            "server-ux",      # 11
+            "connector",
             "l10n-slovenia",  # for v8
         ],
         "account-financial-tools": {
