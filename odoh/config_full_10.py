@@ -210,7 +210,7 @@ symlink = {
         }
     },
     "ecino": {
-        "compassion-modules":{
+        "compassion-modules": {
             "_skip_": [
                 "message_center_compassion"
                 "child_compassion",  #glupi dependency koji ne radi : jwt
