@@ -1,8 +1,8 @@
 """
 Only symlink based on config_brundo_10 clone/pull config
 """
-root = "/media/data/code/ODOO_10"
-sym_dest = "/media/data/code/ODOO_10/symlink"
+root = "/opt/odoo/ODOO_10"
+sym_dest = "/opt/odoo/ODOO_10/symlink"
 symlink = {
     "_info_": 2,
     "_clean_": True, #default False, clean symlink dir from extras not listed

@@ -1,5 +1,5 @@
 branch = '10.0'
-root = "/media/data/code/ODOO_10"
+root = "/opt/odoo/ODOO_10"
 
 clone = {
     '_branch_': '10.0',
@@ -47,7 +47,7 @@ clone = {
 
 }
 
-sym_dest = "/media/data/code/ODOO_10/symlink"
+sym_dest = "/opt/odoo/ODOO_10/symlink"
 symlink = {
     "_info_": 2,
     "_clean_": True,    # default False, clean symlink dir from extras not listed
