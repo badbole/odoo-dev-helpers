@@ -15,7 +15,7 @@ odoo =  [
     ]},
 {"comment": "D5 Public repos",
      "folder": "dajmi5",
-     "link": "git@github.com:dajmi5/",
+     "link": "https://github.com/dajmi5/",
      "repos": [
          "odoo-comunity-themes",
          "odoo-test-data",
@@ -31,7 +31,7 @@ odoo =  [
      ]},
 {"comment": "DECODIO  Public repos",
      #"folder": "DecodIO",
-     "link": "git@github.com:decodio/",
+     "link": "https://github.com/decodio/",
      "repos": [
          "community10",
          "l10n_hr", # samo za 8 for now?

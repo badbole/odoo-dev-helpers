@@ -1,7 +1,7 @@
 odoo = [
  {"comment": "All oca repos",
   #"folder": "oca",
-  "link": "git@github.com:OCA/",
+  "link": "https://github.com/OCA/",
   "repos": [
      "server-tools",
      "partner-contact",
@@ -101,7 +101,7 @@ odoo = [
  },
 {"comment": "Cybro addons",
  #"folder": "cybro",
- "link": "git@github.com:CybroOdoo/",
+ "link": "https://github.com/CybroOdoo/",
  "repos": [
      "CybroAddons"
      ]
@@ -112,7 +112,7 @@ odoo = [
      "code"
     ]},
 {"comment": "Interesting indeed!",
- "link": "git@github.com:it-projects-llc/",
+ "link": "https://github.com/it-projects-llc/",
  "repos": [
      "odoo-saas-tools",
      "misc-addons",

@@ -1,11 +1,11 @@
 odoo =  [
 {"comment": "Equitania Software GmbH",
 
-     "link": "git@github.com:equitania/",
+     "link": "https://github.com/equitania/",
      "repos": ["v10-addons",
     ]},
 {"comment": "Vertel AB",
- "link": "git@github.com:vertelab/",
+ "link": "https://github.com/vertelab/",
  "repos": [
      "odoo-gdpr",
      "odoo-website-dermanord",
@@ -27,19 +27,19 @@ odoo =  [
 
     ]},
 {"comment": "Hibou Corp.",
- "link": "git@github.com:hibou-io/",
+ "link": "https://github.com/hibou-io/",
  "repos": [
      "hibou-odoo-suite",
      "odoo-hr-payroll",
     ]},
 {"comment": "Open Sur",
- "link": "git@github.com:OpenSur/",
+ "link": "https://github.com/OpenSur/",
  "repos": [
      "Odoo_addons",
 
     ]},
 {"comment": "AbAKUS it-solutions",
- "link": "git@github.com:abakus-it/",
+ "link": "https://github.com/abakus-it/",
  "repos": [
      "hr",
      "base",
@@ -52,7 +52,7 @@ odoo =  [
      "project",
  ]},
     {"comment": "Jarsa Sistemas, S.A. de C.V., Odoo Gold Partner in Mexico",
-     "link": "git@github.com:Jarsa/",
+     "link": "https://github.com/Jarsa/",
      "repos": [
          "transport-management-system",
          "vehicle-maintenance-system",
