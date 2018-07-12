@@ -221,7 +221,8 @@ symlink = {
 }
 
 pull = {
-    '_skip_': ['Odoo'],
+    '_skip_': ['Odoo', 'dajmi5', 'uvid'],
+
     # "OCA": {
     #     "l10n-croatia": {
     #         "_folder_": "oca-l10n-croatia"
