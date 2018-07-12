@@ -34,7 +34,12 @@ class ConfigHandler(object):
             try:
                 c = __import__("config_" + config)
             except Exception as E:
-                print "ERROR : " + E
+                print "Erro import :", config
+                try:
+                    print "ERROR : " + E
+                except:
+                    print E.message
+
 
             for option in dir(c):
                 if option.startswith('__'):
