@@ -103,7 +103,8 @@ odoo = [
  #"folder": "cybro",
  "link": "git@github.com:CybroOdoo/",
  "repos": [
-     "CybroAddons"
+     "CybroAddons",
+     "OpenHRMS",
      ]
  },
 {"comment": "Odoo PLM modules set: https://sourceforge.net/projects/openerpplm/",
